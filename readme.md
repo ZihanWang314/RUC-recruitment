@@ -1,7 +1,6 @@
-The program of 2021 RUC RECRUITMENT QUESTION-ANSWERING SYSTEM
-(2021 RUC-RecQA)
-Copyright © 2021-2022 RUC BDAI-lab, All Rights Reserved.
+# 2021 RUC RECRUITMENT QUESTION-ANSWERING SYSTEM
 
+<b>2021 RUC-RecQA. Program is halted, this respiratory is for backup only.</b>
 
 
 The file PRETRAINING shows the process of fine-tuning the model
