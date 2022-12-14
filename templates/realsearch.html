@@ -1,0 +1,66 @@
+<!doctype html>
+
+<title>Hello Sample</title>
+
+
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>测试表单</title>
+  </head>
+  
+  <body>
+    <script>
+      function butClick() {
+          var val = document.getElementById("search_key").value;
+              if(val.length === 0){
+                      alert('搜索为空，请输入内容');
+                      return false;
+              }else{
+                      window.location.href= val;
+              }
+      }
+
+      function butClick1() {
+          var val = document.getElementById("search_key").value;
+              if(val.length === 0){
+                      alert('搜索为空，请输入内容');
+                      return false;
+              }else{
+                      window.location.href= "/search/" + val;
+              }
+      }
+
+
+      document.onkeydown = function (e) {
+          var theEvent = window.event || e;
+          var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+          if (code == 13) {
+              butClick();
+          }
+      }
+      
+      </script>
+        <h3>人大招生问答检索系统 v0.0.1<br /></h3>
+               
+
+      {% if question %}
+        <a class="baidulogo" target="_blank"> 请输入您的问题<br /></a>
+        <input type="search" id="search_key" value={{question}}>
+        <a class="btn" target="_blank"  href="javascript:void(0)" onclick="butClick();">搜索</a> </div>
+        <br />
+        <h4> 问题: {{question}} <br /></h4>
+        <span style="white-space: pre-line">{{answer}}</span
+      {% else %}
+        <a class="baidulogo" target="_blank"> 请输入您的问题<br /></a>
+        <input type="search" id="search_key">
+        <a class="btn" target="_blank"  href="javascript:void(0)" onclick="butClick1();">搜索</a> </div>
+
+      {% endif %}      
+
+      <h4>中国人民大学统计学院 王子涵 制作</h4>
+      <h4>2021.10<br /></h4>
+      
+  </body>
+ 
+</html>

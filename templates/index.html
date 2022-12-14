@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<!--
+	Horizons by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>中国人民大学本科招生问答系统 v0.0.1 made by 王子涵</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				border: none;
+			}
+			.x{
+				display: inline-block;
+				margin-top: 0px;
+				margin-left: 0px;
+				position: relative;
+			}
+			.k{
+				width:536px;
+				height:38px;
+				border: 1px solid #240202;
+				float: middle;
+				box-sizing: border-box;
+
+			}
+			.n{
+				width: 102px;
+				height: 38px;
+				line-height: 40px;
+				float: left;
+				background-color: #38f;
+				font-size: 16px;
+				/*鼠标悬停按钮上方，光标成手指样式*/
+				cursor: pointer;
+			}
+			.t{
+				z-index: 1;
+				position: absolute;
+				right: 0px;
+				top: 0%;
+				margin-top: 0px;
+				height: 38px;
+				width: 0px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body class="homepage">
+	  
+		<!-- Header -->
+			<div id="header">
+				<div class="container">
+					<!-- Logo -->
+						<h1><a href="#" id="logo">RUC-GSAI</a></h1>
+					
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="index.html">招生问答</a></li>
+								<li><a href="ai.ruc.edu.cn">了解高瓴</a></li>
+								<li><a href="rdzs.ruc.edu.cn">招生官网</a></li>
+								
+							</ul>
+						</nav>
+
+
+					<!-- Banner -->
+					{% if question %}
+					<div id="banner">
+						<div class="container">
+							<section>
+								<header >
+									<h2>中国人民大学本科招生问答系统</h2>	
+								</header>
+							</section>			
+						</div>
+					</div>
+
+					{% else %}
+						<div id="banner">
+							<div class="container">
+								<section>
+									<header class="major">
+										<h2>中国人民大学本科招生问答系统</h2>	
+											<input type="text" class="k" id="search_key">
+											<span class="t"></span>
+										<script>
+											function butClick() {
+												var val = document.getElementById("search_key").value;
+													if(val.length === 0){
+															alert('搜索为空，请输入内容');
+															return false;
+													}else{
+															window.location.href= val;
+													}
+											}
+									  
+											function butClick1() {
+												var val = document.getElementById("search_key").value;
+													if(val.length === 0){
+															alert('搜索为空，请输入内容');
+															return false;
+													}else{
+															window.location.href= val;
+													}
+											}
+									  
+									  
+											document.onkeydown = function (e) {
+												var theEvent = window.event || e;
+												var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+												if (code == 13) {
+													butClick();
+												}
+											}
+										</script>
+										<a class="button small" target="_blank"  href="javascript:void(0)" onclick="butClick1();">搜索</a> </div>
+								
+									</header>
+								</section>			
+							</div>
+						</div>
+					{% endif %}
+
+				</div>
+			</div>
+			
+		<!-- Main -->
+		{% if question %}
+			<div id="main" class="wrapper style1">
+				<section class="container">
+					
+					<header class="major">
+						<script>
+							function butClick() {
+								var val = document.getElementById("search_key").value;
+									if(val.length === 0){
+											alert('搜索为空，请输入内容');
+											return false;
+									}else{
+											window.location.href= val;
+									}
+							}
+					
+							function butClick1() {
+								var val = document.getElementById("search_key").value;
+									if(val.length === 0){
+											alert('搜索为空，请输入内容');
+											return false;
+									}else{
+											window.location.href= val;
+									}
+							}
+					
+					
+							document.onkeydown = function (e) {
+								var theEvent = window.event || e;
+								var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+								if (code == 13) {
+									butClick();
+								}
+							}
+						</script>
+							<input type="text" class="k" id="search_key" value={{question}}>
+							<span class="t"></span>
+						<a class="button small" target="_blank"  href="javascript:void(0)" onclick="butClick1();">搜索</a> <br /><br />
+						<span style="white-space: pre-line" class="byline">{{question}}</span>  <br /><br />
+						<span style="white-space: pre-line" class="byline">{{answer}}</span>	
+					</header>
+				</section>
+			</div>
+		{% endif %}
+
+
+		<!-- Footer -->
+			<div id="footer">
+				<div class="container">
+					<div class="copyright">
+						制作: 中国人民大学统计学院 王子涵<br />
+						Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)<br />
+						2021.7-2021.11 <br />
+					</div>
+		
+				</div>
+			</div>
+
+	</body>
+</html>
